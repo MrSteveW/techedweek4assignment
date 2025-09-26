@@ -12,10 +12,8 @@ async function fetchData() {
 function displayPosts(data) {
   postsContainer.textContent = ""; // Clear existing posts
 
-  // Sort posts by created_at in descending order (newest first)
-  const sortedPosts = data.sort(
-    (a, b) => new Date(b.created_at) - new Date(a.created_at)
-  );
+  // Sort posts by id in descending order (highest id first)
+  const sortedPosts = data.sort((a, b) => b.id - a.id);
 
   sortedPosts.forEach((post) => {
     const newPost = document.createElement("div");
@@ -73,9 +71,7 @@ function displayPosts(data) {
 
 // ## ADD LIKE ##
 async function addLike(id, likes) {
-  console.log(`You are liking post ${id} with ${likes} likes`);
   likes++;
-  console.log(`Likes now is ${likes} likes`);
   try {
     const response = await fetch(
       `https://hotelcalifornia-server.onrender.com/${id}`,
@@ -88,7 +84,6 @@ async function addLike(id, likes) {
       }
     );
     const result = await response.json();
-    console.log(result);
     fetchData();
   } catch (error) {
     console.error(error);
