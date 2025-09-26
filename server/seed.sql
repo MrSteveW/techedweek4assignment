@@ -1,0 +1,9 @@
+CREATE TABLE posts (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  title TEXT,
+  username TEXT,
+  avatar INT,
+  text TEXT,
+  likes INT
+);
