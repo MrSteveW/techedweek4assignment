@@ -1,4 +1,4 @@
-I really enjoyed our first assignment creating a full-stack app. It is so enjoyable persisting data that you have entered into a form!! :blush:
+I really enjoyed our first assignment creating a full-stack app. It is so enjoyable creating an app that will persist data!! :blush:
 
 ## :dart: Requirements achieved
 
@@ -11,10 +11,14 @@ I really enjoyed our first assignment creating a full-stack app. It is so enjoya
 ## :dart: Stretch goals
 
 - [x] I used form vailidation - each field is 'required' and I came across a Github project which used a max number of characters and a var 'character counter', which looks neat, so I borrowed that idea :mag:
-- [x] I started experimenting in Tailwind. I used the documentation for a Form Grid, but ended up modifying it heavily. I can see it will take a lot of practise to get to know Tailwind's shortcuts such as px- and m- for styling, but that in time it will be a shortcut for quick, effective styling! https://v1.tailwindcss.com/components/forms :bar_chart:
-- [x] I used Tailwind Heroicons for the heart and trash icons - the code was soo long I had to put them in separate functions! https://heroicons.com :v:
+- [x] I started experimenting using **Tailwind**. I used the documentation for a Form Grid, but ended up modifying it heavily. I can see it will take a lot of practise to get to know Tailwind's shortcuts such as px- and m- for styling, but that in time it will be a shortcut for quick, effective styling! https://v1.tailwindcss.com/components/forms :bar_chart:
+- [x] I used **Tailwind Heroicons** for the heart and trash icons - the code was soo long I had to put them in separate functions! https://heroicons.com :v:
 - [x] I added a delete button listener to each post which sends a DELETE method to the server, passing the id as a parameter :scissors:
 - [x] Adding likes with a PATCH was the easy part. I had a little trouble as it then wouldn't refresh the page to show the update number of likes... _another problem solved by React..._ :hearts:
 - [x] I really didn't like the way the displayPosts was putting the most recently **edited** post up top, so I needed a bit of _LLM support_ to ensure that the posts stay in chronological order based on ids :flower_playing_cards:
 - [x] I added a random number generator to the handleSubmitPost function, which links to one of 10 random avatars stored in the assets folder. This just gives it more the 'look' of a proper forum with users accounts :woman:
-- [x] A quick check with Windows Narrator told me the forms read out ok, but the images just say "graphic" - I set an "aria-label" and the graphic to "aria-hidden" :sound:
+- [x] A quick check with Windows Narrator told me the forms read out ok, but the heart and trash icons just say "graphic" - I set an "aria-label" and the graphic to "aria-hidden" :sound:
+
+With thanks to the following:
+https://userpics.craftwork.design/
+The Eagles :metal:

@@ -16,7 +16,7 @@ app.use(express.json());
 // ROUTES
 // GET ALL POSTS
 app.get("/", async (req, res) => {
-  const posts = await db.query("SELECT * FROM posts");
+  const posts = await db.query("SELECT * FROM posts ORDER BY id DESC");
   res.status(200).json(posts.rows);
 });
 

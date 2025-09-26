@@ -11,10 +11,6 @@ async function fetchData() {
 
 function displayPosts(data) {
   postsContainer.textContent = ""; // Clear existing posts
-
-  // Sort posts by id in descending order (highest id first)
-  const sortedPosts = data.sort((a, b) => b.id - a.id);
-
   sortedPosts.forEach((post) => {
     const newPost = document.createElement("div");
     newPost.setAttribute("class", "post");
