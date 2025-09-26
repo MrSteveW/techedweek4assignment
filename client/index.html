@@ -37,6 +37,7 @@
                     id="username"
                     type="text"
                     placeholder="Don Henley"
+                    required
                   />
                 </div>
                 <!-- Post -->
@@ -53,6 +54,7 @@
                     name="title"
                     type="text"
                     placeholder="Such a lovely place"
+                    required
                   />
                 </div>
                 <!-- Message text -->
@@ -69,7 +71,10 @@
                     name="text"
                     type="text"
                     placeholder="On a dark desert highway"
+                    maxlength="300"
+                    required
                   />
+                  <p id="character-count">0 / 300 characters</p>
                 </div>
                 <!-- Post button -->
                 <div class="w-1/5 px-1">

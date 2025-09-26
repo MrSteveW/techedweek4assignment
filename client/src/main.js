@@ -4,7 +4,7 @@ const likes = 0;
 let avatar = 0;
 
 async function fetchData() {
-  const response = await fetch("http://localhost:3000");
+  const response = await fetch("https://hotelcalifornia-server.onrender.com/");
   const data = await response.json();
   displayPosts(data);
 }
@@ -69,13 +69,16 @@ async function addLike(id, likes) {
   likes++;
   console.log(`Likes now is ${likes} likes`);
   try {
-    const response = await fetch(`http://localhost:3000/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ likes }),
-    });
+    const response = await fetch(
+      `https://hotelcalifornia-server.onrender.com/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ likes }),
+      }
+    );
     const result = await response.json();
     console.log(result);
     fetchData();
@@ -84,6 +87,14 @@ async function addLike(id, likes) {
   }
 }
 
+// ## CHARACTER COUNT FOR TEXT AREA ##
+const characterCount = document.getElementById("character-count");
+const messageArea = document.getElementById("text");
+const maxLength = messageArea.getAttribute("maxlength");
+messageArea.addEventListener("input", () => {
+  const currentLength = messageArea.value.length;
+  characterCount.textContent = `${currentLength} / ${maxLength} characters`;
+});
 // ## HANDLE NEW POST ##
 
 async function handleSubmitPost(event) {
@@ -96,13 +107,16 @@ async function handleSubmitPost(event) {
   console.log("Form data:", { title, username, text, avatar, likes }); // Debug log
 
   try {
-    const response = await fetch("http://localhost:3000", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, username, avatar, text, likes }),
-    });
+    const response = await fetch(
+      "https://hotelcalifornia-server.onrender.com/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, username, avatar, text, likes }),
+      }
+    );
 
     const result = await response.json();
 
@@ -127,9 +141,12 @@ function createAvatar() {
 
 async function handleDeletePost(id) {
   try {
-    const response = await fetch(`http://localhost:3000/${id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `https://hotelcalifornia-server.onrender.com/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     if (response.ok) {
       // Refresh the posts after successful deletion
