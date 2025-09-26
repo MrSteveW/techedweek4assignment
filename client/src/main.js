@@ -22,7 +22,7 @@ function displayPosts(data) {
       if (key === "created_at") {
         div.textContent = new Date(value).toLocaleDateString("en-GB");
       } else if (key === "avatar") {
-        div.style.backgroundImage = `url("./public/${value}.png")`;
+        div.style.backgroundImage = `url("./assets/${value}.png")`;
       } else if (key === "likes") {
         const likeButton = insertLikeButton();
         div.append(value);
